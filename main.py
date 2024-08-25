@@ -43,11 +43,10 @@ def main():
             if astroid.collision(player):
                 print("Game Over")
                 sys.exit()
-
-        for astroid in astroids:
+            
             for shot in shots:
                 if astroid.collision(shot):
-                    astroid.kill()
+                    astroid.split()
                     shot.kill()
 
         screen.fill("black")
