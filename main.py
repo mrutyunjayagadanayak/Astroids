@@ -44,6 +44,12 @@ def main():
                 print("Game Over")
                 sys.exit()
 
+        for astroid in astroids:
+            for shot in shots:
+                if astroid.collision(shot):
+                    astroid.kill()
+                    shot.kill()
+
         screen.fill("black")
 
         for i in drawable:
